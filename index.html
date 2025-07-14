@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Generador Dada</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" type="image/png" href="icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Poemas Dada</h1>
+        
+        <div class="instructions">
+            <strong>PARA HACER UN POEMA DADAÍSTA</strong><br><br>
+            Toma un periódico.<br>
+            Toma unas tijeras.<br>
+            Escoge en este periódico un artículo de la longitud que quieras dar a tu poema.<br>
+            Recorta el artículo.<br>
+            Recorta enseguida con cuidado cada una de las palabras que forman este artículo y métalas en una bolsa.<br>
+            Agita suavemente.<br>
+            Saca enseguida cada recorte uno tras otro.<br>
+            Copia concienzudamente en el orden en que hayan salido de la bolsa.<br>
+            El poema se parecerá a ti.<br>
+            Y te convertirás en un escritor infinitamente original y de una sensibilidad hechizante, aunque incomprendido del vulgo.<br><br>
+            —Tristan Tzara, 1920
+        </div>
+
+        <div class="chaos-switch-wrapper">
+            <div class="switch-container">
+                <span class="switch-label">CAOS</span>
+                <label class="switch">
+                    <input type="checkbox" id="chaosSwitch">
+                    <span class="slider"></span>
+                </label>
+                <span class="switch-label">CAOS TOTAL</span>
+            </div>
+        </div>
+
+        <div class="area-labels">
+            <div class="label">TEXTO ORIGINAL</div>
+            <div class="label"></div>
+            <div class="output-label-container">
+                <div class="label">POEMA DADAÍSTA</div>
+            </div>
+        </div>
+
+        <div class="workspace">
+            <textarea id="txtOriginal" class="text-area" placeholder="Ingresa tu texto aquí...">
+Pienso en tu sexo.
+Simplificado el corazón, pienso en tu sexo,
+ante el hijar maduro del día.
+Palpo el botón de dicha, está en sazón.
+Y muere un sentimiento antiguo
+degenerado en seso.
+Pienso en tu sexo, surco más prolífico
+y armonioso que el vientre de la sombra,
+aunque la muerte concibe y pare
+de Dios mismo.
+Oh Conciencia,
+pienso, sí, en el bruto libre
+que goza donde quiere, donde puede.
+Oh escándalo de miel de los crepúsculos.
+Oh estruendo mudo.
+¡Odumodneurtse!</textarea>
+            
+            <button id="btnDada" class="generate-btn">Dada</button>
+            
+            <div style="position: relative; width: 400px;">
+                <button id="copyBtn" style="
+                    position: absolute;
+                    top: 8px;
+                    right: 24px;
+                    background-color: #444;
+                    color: white;
+                    border: none;
+                    padding: 4px 8px;
+                    font-size: 16px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    z-index: 10;
+                ">📋 Copiar</button>
+                
+                <div id="txtDada" class="output-area" style="padding-top: 2em;"></div>
+            </div>
+
+            <div id="copyMsg" style="
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #222;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 6px;
+                font-size: 16px;
+                font-family: 'Courier New', monospace;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+                z-index: 9999;
+                opacity: 0.9;
+            ">Poema copiado al portapapeles</div>
+
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
